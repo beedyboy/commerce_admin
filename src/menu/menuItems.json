@@ -1,0 +1,70 @@
+{
+    "data": [
+      {
+        "name": "Dashboard",
+        "url": "/dashboard", 
+        "icon": "fa fa-dashboard"
+      },
+      {
+        "name": "Category",
+        "url": "/category",
+        "icon": "fa fa-folder"
+      },
+      {
+        "name": "Company",
+         "icon": "fa fa-database",
+        "children": [
+          {
+            "name": "Pages",
+            "url": "/pages" 
+          },
+          {
+            "name": "Roles",
+            "url": "/roles"
+          },
+          {
+            "name": "Staff",
+            "url": "/staff"
+          } ,
+          {
+            "name": "Company Profile",
+            "url": "/company-profile"
+          } 
+        ]
+      },
+      {
+        "name": "Public User",
+         "icon": "fa fa-group",
+        "children": [
+           
+          {
+            "name": "Buyers",
+            "url": "/buyers"
+          },
+          {
+            "name": "Sellers",
+            "url": "/sellers" 
+          },
+          {
+            "name": "Roles",
+            "url": "/roles"
+          } 
+        ]
+      },
+      {
+        "name": "User Profile",
+        "url": "/user-profile",
+        "icon": "tim-icons icon-single-02"
+      }
+
+    ]
+  }
+  
+
+
+
+ 
+  
+   
+   
+   
