@@ -1,4 +1,4 @@
-import React, {  useContext, useState, useEffect } from 'react'; 
+import React, {  useContext, useEffect } from 'react'; 
 import { observer } from "mobx-react"  
 import { Row, Col } from 'reactstrap'; 
 import MemberStore from '../../stores/MemberStore';
@@ -8,20 +8,19 @@ import SellersList from './components/SellersList';
 const Sellers = () => {
    
   const memberStore = useContext(MemberStore); 
-  const { filteredSeller, allSellers } = memberStore;  
-  const [mode, setMode] = useState('Add');
-  const [data, setData] = useState([]);
+  const { filteredSeller, allSellers, toggleSeller } = memberStore;  
 
  useEffect(() => {
     allSellers(); 
 }, []);
-
-const handleMode = (value) => {
-  setMode(value);
-}
-const handleData = (value) => {
-  setData(value);
+ 
+const handleSwitch = (elem, state, id) => { 
+const data = {
+  id,
+  status: state === "Active" ? "Pending" : "Active"
 } 
+   toggleSeller(data);
+ } 
   return (
     <div className="content">
          <Helmet>
@@ -32,7 +31,7 @@ const handleData = (value) => {
      <Col xs="12" md="12"> <h3 className="title"> Sellers</h3> </Col>
     
     <Col xs="12" md="12"> 
-        <SellersList sellers={filteredSeller} handleMode={handleMode} handleData={handleData} />
+        <SellersList sellers={filteredSeller}  toggle={handleSwitch} />
     </Col>
     </Row> 
     </div>

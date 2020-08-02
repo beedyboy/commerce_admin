@@ -57,6 +57,14 @@ class MemberStore {
       }
     })
   }
+  toggleSeller = (data) => {
+     backend.post('sellers/toggle', data).then(res => {
+       if (res.data.status === 200) {
+        this.allSellers();
+       }
+     })
+    
+  }
 
   removeBuyer = (id) => { 
     backend.delete('buyer/' + id).then( res => {

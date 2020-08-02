@@ -5,6 +5,7 @@ import RoleList from "../views/Roles/RoleList.js";
 import StaffList from "../views/Staff/StaffList.js"; 
 // import Shops from "../views/Shop/Shops.js";
 // import Members from "../views/Membership/index.js";
+import Product from '../views/Products/Product.js';
 import Pages from "../views/CMS/Pages/Pages.js";
 import CompanyProfile from "../views/Company/CompanyProfile.js";
 import Sellers from "../views/Membership/Sellers.js";
@@ -23,6 +24,13 @@ var Menus = [
     name: "Pages", 
     icon: "tim-icons fa fa-clone",
     component: Pages,
+    layout: "/admin"
+  },
+  {
+    path: "/products",
+    name: "Product", 
+    icon: "tim-icons fa fa-clone",
+    component: Product,
     layout: "/admin"
   },
   {

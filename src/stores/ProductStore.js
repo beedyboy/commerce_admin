@@ -28,6 +28,14 @@ class ProductStore {
         
     }); 
   }
+   toggleProduct = (data) => {
+     backend.post('product/toggle', data).then(res => {
+       if (res.data.status === 200) {
+        this.fetchProduct();
+       }
+     })
+    
+  }
 
    removeProduct = (id) => { 
     backend.delete('product/' + id).then( res => {
@@ -75,6 +83,7 @@ decorate(ProductStore, {
   products: observable, 
   fetchProduct: action,
   removeProduct: action,
+  toggleProduct: action,
   setFilter: action
 })
 

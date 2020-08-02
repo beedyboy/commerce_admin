@@ -1,12 +1,13 @@
 import React, { Fragment, useContext, useState } from 'react'; 
 import PropTypes from 'prop-types';
 import { observer } from "mobx-react" 
-import { Button, Table, Badge } from 'reactstrap';
+import { Button, Table } from 'reactstrap';
+import Switch  from 'react-bootstrap-switch';
 import { TablePagination } from '../../../shared/TablePagination';
 import MemberStore from '../../../stores/MemberStore'; 
 
 const SellersList = props => {
-  const { className, sellers, filter, handleData, handleMode } = props; 
+  const { className, sellers, filter, toggle } = props; 
   const memStore = useContext(MemberStore); 
   const {  removeSeller, setFilter } = memStore;  
 
@@ -69,13 +70,19 @@ const currentPosts = sellers.slice(indexOfFirstPosts, indexOfLastPosts);
     {currentPosts.slice(0, rowsPerPage).map(( mem, i) => (
     <tr key={mem.id} >
             {/* <td className="text-center">{i + 1}</td> */}
-            <td> {mem.shop_name || 'Not available'} </td>
-            <td> {mem.firstname || 'Not available'} </td>
-            <td> {mem.lastname || 'Not available'} </td>
+            <td> {mem.shop_name || 'Nil'} </td>
+            <td> {mem.firstname || 'Nil'} </td>
+            <td> {mem.lastname || 'Nil'} </td>
             <td> {mem.email} </td> 
-            <td>
-            <Badge color={mem.status === 'Pending' ? 'danger' : 'success'} pill>
-                {mem.status}</Badge>
+            <td> 
+                 <Switch 
+                  defaultValue={mem.status === "Active" ? true : false}
+                  offColor="default"
+                  offText="Pending"
+                  onColor="success"
+                  onText="Active" 
+                  onChange={(el) => toggle(el, mem.status, mem.id)}
+                  name='status' />
              </td>
             <td className="text-right">{mem.created_at}</td>
             <td className="text-right">
@@ -83,7 +90,7 @@ const currentPosts = sellers.slice(indexOfFirstPosts, indexOfLastPosts);
                 <Button onClick={() => editRow(mem) } className="  btn-simple" color="success" size="sm">
                    Edit
                 </Button>{` `}
-                <Button className="  btn-simple" onClick={()=> removeRow(mem.id)} color="danger" size="sm">
+                <Button className="btn-simple" onClick={()=> removeRow(mem.id)} color="danger" size="sm">
                   Delete
                 </Button>{` `}
             </td>

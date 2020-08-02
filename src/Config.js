@@ -5,7 +5,7 @@ import Utility from './shared/Storage';
 // axios.defaults.baseURL = 'http://localhost:8000/api/'
 // axios.defaults.headers.common = {'Authorization': `bearer ${Utility.get('token')}`}
 // export default axios;
-const serverUrl = 'http://developer.devprima.com/apis/';
+const serverUrl = 'http://localhost:8000/api/';
 export const  backend = axios.create({
   baseURL: serverUrl,
   headers: {

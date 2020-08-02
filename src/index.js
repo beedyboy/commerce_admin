@@ -4,6 +4,8 @@ import "./assets/demo/demo.css";
 import "./assets/scss/black-dashboard-react.scss";
 import "./assets/css/nucleo-icons.css"; 
 import 'font-awesome/css/font-awesome.min.css';
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 import App from './App'; 
 import { positions, transitions, Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';

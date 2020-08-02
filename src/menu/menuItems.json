@@ -52,6 +52,11 @@
         ]
       },
       {
+        "name": "Product",
+        "url": "/products",
+        "icon": "tim-icons icon-single-02"
+      },
+      {
         "name": "User Profile",
         "url": "/user-profile",
         "icon": "tim-icons icon-single-02"

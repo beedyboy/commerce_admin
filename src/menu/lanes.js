@@ -23,7 +23,7 @@ import RoleList from '../views/Roles/RoleList';
 import StaffList from '../views/Staff/StaffList';
 import SignIn from '../views/SIgnIn/SignIn';
 // import Members from '../views/Membership';
-// import Shops from '../views/Shop/Shops';
+import Product from '../views/Products/Product';
 import Pages from '../views/CMS/Pages/Pages';
 import CompanyProfile from '../views/Company/CompanyProfile';
 import Buyers from '../views/Membership/Buyers';
@@ -49,11 +49,19 @@ const Lanes = () => {
         layout={MainLayout}
         path="/user-profile" 
       />
+      
+      
     <PrivateRoute
         component={Pages}
         exact
         layout={MainLayout}
         path="/pages"
+      /> 
+    <PrivateRoute
+        component={Product}
+        exact
+        layout={MainLayout}
+        path="/products"
       />
        <PrivateRoute
         component={Category}
