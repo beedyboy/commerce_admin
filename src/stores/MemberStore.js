@@ -58,7 +58,7 @@ class MemberStore {
     })
   }
   toggleSeller = (data) => {
-     backend.post('sellers/toggle', data).then(res => {
+     backend.post('seller/toggle', data).then(res => {
        if (res.data.status === 200) {
         this.allSellers();
        }

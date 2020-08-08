@@ -23,7 +23,7 @@ const AddRole = ({ handleClose, open, mode, initial_data}) => {
   
   
   const [priviledges, setPriviledges] = useState({ 
-    roles: { add: true, view: false, del: true}, 
+    roles: { add: false, view: false, del: false}, 
     categories: { add: false, view: false, del: false}, 
     staffs: { add: false, view: false, del: false}, 
     buyers: { add: false, view: false, del: false}, 
