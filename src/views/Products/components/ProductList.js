@@ -37,8 +37,8 @@ const columns = [
 	{dataField: "shopName", text: "Shop",
 	//filter: textFilter()
 	}, 
-	{dataField: "available", text: "Qty"},
-	{dataField: "price", text: "Price"},
+	// {dataField: "available", text: "Qty"},
+	// {dataField: "price", text: "Price"},
 	{dataField: "created_at", text: "Date Created"},
 	{
 		dataField: "status",
