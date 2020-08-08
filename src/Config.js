@@ -5,7 +5,13 @@ import Utility from './shared/Storage';
 // axios.defaults.baseURL = 'http://localhost:8000/api/'
 // axios.defaults.headers.common = {'Authorization': `bearer ${Utility.get('token')}`}
 // export default axios;
-const serverUrl = 'http://localhost:8000/api/';
+const env = { 
+  production: 'https://bserver-admin.herokuapp.com/api/',
+  development: 'http://localhost:8000/api/'
+}
+
+
+const serverUrl = env[process.env];
 export const  backend = axios.create({
   baseURL: serverUrl,
   headers: {
@@ -13,7 +19,4 @@ export const  backend = axios.create({
       Authorization: `bearer ${Utility.get('token')}`
     }
   }
-});
-// export const serverUrl = 'http://192.168.0.5/server/' 
-// export const serverUrl = 'http://localhost/project/php/smart/'
- 
+}); 
