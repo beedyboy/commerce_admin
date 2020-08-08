@@ -11,7 +11,7 @@ const env = {
 }
 
 
-const serverUrl = env[process.env];
+const serverUrl = env.production;
 export const  backend = axios.create({
   baseURL: serverUrl,
   headers: {
