@@ -6,7 +6,7 @@ import Utility from './shared/Storage';
 // axios.defaults.headers.common = {'Authorization': `bearer ${Utility.get('token')}`}
 // export default axios;
 const env = { 
-  production: ' https://cors-anywhere.herokuapp.com/https://bserver-admin.herokuapp.com/api/',
+  production: 'https://bserver-admin.herokuapp.com/api/',
   development: 'http://localhost:8000/api/'
 }
 
