@@ -14,8 +14,7 @@ const env = {
 const serverUrl = env.production;
 export const  backend = axios.create({
   baseURL: serverUrl,
-  responseType: 'json',
-  timeout: 10000,
+  responseType: 'json', 
   headers: {
      common: {
       Authorization: `bearer ${Utility.get('token')}`
